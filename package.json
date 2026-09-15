@@ -1,0 +1,26 @@
+{
+  "name": "himodify",
+  "version": "1.0.0",
+  "description": "修改请求头和返回数据 - Modify HTTP headers & Mock and replay API",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "wxt",
+    "build": "wxt build",
+    "zip": "wxt zip",
+    "compile": "vue-tsc --noEmit",
+    "icons": "node scripts/generate-icons.mjs",
+    "postinstall": "wxt prepare"
+  },
+  "dependencies": {
+    "vue": "^3.5.13"
+  },
+  "devDependencies": {
+    "@types/chrome": "^0.0.287",
+    "@wxt-dev/module-vue": "^1.0.3",
+    "pngjs": "^7.0.0",
+    "typescript": "^5.7.3",
+    "vue-tsc": "^2.2.0",
+    "wxt": "^0.21.4"
+  }
+}

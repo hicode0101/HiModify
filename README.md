@@ -1,5 +1,9 @@
 # HiModify
 
+[![Build & Release](https://github.com/hicode0101/HiModify/actions/workflows/build.yml/badge.svg)](https://github.com/hicode0101/HiModify/actions/workflows/build.yml)
+
+简体中文 | [English](README.en-US.md)
+
 <p align="left">
   <img src="public/icon/128.png" width="64" alt="HiModify" />
 </p>
@@ -105,6 +109,8 @@ npm run dev
 - 工具栏图标上的数字角标 = 当前已启用的规则数，一眼确认扩展在工作
 
 ## 功能二：Mock 与重放 API
+
+![Mock 与重放 API](screenshot/HiModify-2-cn.png)
 
 切到「Mock 与重放 API」标签页。命中规则的 XHR/Fetch 请求不会真正发到服务器，而是**在页面内直接返回你定义的响应**——后端没写完的接口、想复现的异常场景，都能自己造。
 

@@ -29,7 +29,13 @@
 
 ## 安装方式
 
-### 方式一：从源码安装（推荐）
+### 方式一：本地加载（推荐）
+
+1. 下载 [`himodify-1.0.0-chrome.zip`](https://github.com/hicode0101/HiModify/releases) 并解压（或自行构建，见下文）
+2. 打开 `chrome://extensions`，开启右上角 **开发者模式**
+3. 点击 **「加载已解压的扩展程序」**，选择解压后的目录
+
+### 方式二：从源码安装
 
 ```bash
 git clone https://github.com/hicode0101/HiModify.git
@@ -45,7 +51,7 @@ npm run build
 3. 点击「加载已解压的扩展程序」，选择 `.output/chrome-mv3` 目录
 4. 工具栏出现 HiModify 铅笔图标即安装成功
 
-### 方式二：开发调试
+### 方式三：开发调试
 
 ```bash
 npm run dev

@@ -29,7 +29,13 @@ Fluent-design UI (Windows 11 style) with Chinese/English language switching. Fro
 
 ## Installation
 
-### Option 1: Build from source (recommended)
+### Option 1: Install from release zip (recommended)
+
+1. Download [`himodify-1.0.0-chrome.zip`](https://github.com/hicode0101/HiModify/releases) and unzip it (or build it yourself, see below)
+2. Open `chrome://extensions` and turn on **Developer mode** (top right)
+3. Click **Load unpacked** and select the unzipped directory
+
+### Option 2: Build from source
 
 ```bash
 git clone https://github.com/hicode0101/HiModify.git
@@ -45,7 +51,7 @@ The build output is in `.output/chrome-mv3`. Then load it into the browser:
 3. Click **Load unpacked** and select the `.output/chrome-mv3` directory
 4. The HiModify pencil icon appears in the toolbar — you're done
 
-### Option 2: Development mode
+### Option 3: Development mode
 
 ```bash
 npm run dev

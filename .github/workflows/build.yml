@@ -23,6 +23,19 @@ jobs:
           node-version: 22
           cache: npm
 
+      # 直接以 tag 为准把版本号写入 package.json（wxt 构建时读取它生成
+      # manifest.version 和 zip 文件名），不再要求手动同步 package.json
+      - name: Set version from tag
+        if: startsWith(github.ref, 'refs/tags/v')
+        run: |
+          VERSION="${GITHUB_REF_NAME#v}"
+          if ! echo "$VERSION" | grep -Eq '^[0-9]+\.[0-9]+\.[0-9]+(-[0-9A-Za-z.-]+)?$'; then
+            echo "::error::标签 ${GITHUB_REF_NAME} 不是有效的 semver，期望格式 v1.2.3"
+            exit 1
+          fi
+          npm version "$VERSION" --no-git-tag-version --allow-same-version
+          echo "本次构建版本：$VERSION"
+
       - name: Install dependencies
         run: npm ci
 
@@ -32,16 +45,6 @@ jobs:
       # wxt zip 会先执行完整构建，再打包 .output/<name>-<version>-chrome.zip
       - name: Build & zip
         run: npm run zip
-
-      - name: Check tag matches package.json version
-        if: startsWith(github.ref, 'refs/tags/v')
-        run: |
-          VERSION=$(node -p "require('./package.json').version")
-          TAG="${GITHUB_REF_NAME#v}"
-          if [ "$VERSION" != "$TAG" ]; then
-            echo "::error::标签 v$TAG 与 package.json 版本 $VERSION 不一致"
-            exit 1
-          fi
 
       # .output 是隐藏目录（点开头），upload-artifact / Release 的 glob
       # 默认会忽略隐藏目录导致 "No files were found"，这里先拷贝到普通目录

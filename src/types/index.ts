@@ -71,4 +71,4 @@ export const DEFAULT_MOCK_SETTINGS: MockSettings = { masterEnabled: false, recor
 export const HISTORY_LIMIT = 100;
 
 export const AUTHOR = 'hicode0101';
-export const PROJECT_URL = 'https://github.com/hicode0101/HiModify';
+export const PROJECT_URL = 'https://github.com/hicode0101/HiTools';
